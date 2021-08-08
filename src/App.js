@@ -4,6 +4,8 @@ import "./App.css";
 function App() {
   const intervalRef = useRef(null);
   const [timer, setTimer] = useState("00:00:00");
+  // Onde declara o tempo
+  const initialTime = 10 * 60;
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
     const days = Math.floor(total / (1000 * 60 * 60 * 24));
@@ -34,7 +36,7 @@ function App() {
   }
 
   function clearTimer(endtime) {
-    setTimer("00:05:00");
+    setTimer("Iniciando..");
     if (intervalRef.current) clearInterval(intervalRef.current);
     const id = setInterval(() => {
       startTimer(endtime);
@@ -43,8 +45,8 @@ function App() {
   }
   function getDeadlineTime() {
     let deadline = new Date();
-
-    deadline.setSeconds(deadline.getSeconds() + 300);
+    // O valor 300 é o tempo de 60 segundos * 5 Ok
+    deadline.setSeconds(deadline.getSeconds() + initialTime);
     return deadline;
   }
   useEffect(() => {
