@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 
@@ -5,7 +6,7 @@ function App() {
   const intervalRef = useRef(null);
   const [timer, setTimer] = useState("00:00:00");
   // Onde declara o tempo
-  const time = 10;
+  const time = 5;
   const initialTime = time * 60;
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
