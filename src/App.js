@@ -5,7 +5,8 @@ function App() {
   const intervalRef = useRef(null);
   const [timer, setTimer] = useState("00:00:00");
   // Onde declara o tempo
-  const initialTime = 10 * 60;
+  const time = 10;
+  const initialTime = time * 60;
   function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
     const days = Math.floor(total / (1000 * 60 * 60 * 24));
